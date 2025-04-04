@@ -3,16 +3,20 @@ import "./../styles/App.css";
 
 function App() {
 
-  let [para,setPara] = useState("");
+  let [para,setPara] = useState(false);
   
   function display(){
-    setPara("Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy")
+    setPara(true);
   }
 
   return (
     <div id="main">
       <button id="click" onClick={display}>Click Me</button>
-      <p id="para">{para}</p>
+      {
+        para && (
+        <p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>
+      )}
+      
     </div>
   );
 }
